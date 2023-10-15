@@ -19,7 +19,9 @@ from pdb import set_trace as pdbst
 from itertools import product
 import ptvsd
 
-
+##################   DEBUG CODE ##################
+#In order to use place a breakpoint in a line of code and in Visual Studio Code
+#and run in the run and debug mode (Ctrl+Shift+D)
 # attach to VS Code debugger if this script was run with BOKEH_VS_DEBUG=true
 # (place this just before the code you're interested in)
 if os.environ['BOKEH_VS_DEBUG'] == 'true':
@@ -27,6 +29,7 @@ if os.environ['BOKEH_VS_DEBUG'] == 'true':
     print('Waiting for debugger attach')
     ptvsd.enable_attach(address=('localhost', 5678), redirect_output=True)
     ptvsd.wait_for_attach()
+###################################################
 
 rb_globs = {'output_subdir':'/outputs/', 'test_file':'cap.csv', 'report_subdir':'/reeds2'}
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
